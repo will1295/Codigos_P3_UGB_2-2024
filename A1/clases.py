@@ -5,6 +5,7 @@ class carro():
         self.marca = marca
         self.modelo = modelo
         self.vin = vin
+        
         self.nmotor = nmotor
         self.placa = placa
         self.clase = clase
