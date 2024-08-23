@@ -1,5 +1,4 @@
 class carro():
-    
     def __init__(self,color,marca,modelo,vin,
               nmotor,placa,clase,trm):
         self.color = color
