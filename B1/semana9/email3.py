@@ -5,7 +5,7 @@ import os
 load_dotenv()
 from PyQt5.QtWidgets import (QApplication,QWidget,
                              QVBoxLayout,QLabel,
-                             QLineEdit,QTextEdit,QPushButton)
+                             QLineEdit,QTextEdit,QPushButton,QMessageBox)
 
 class emailwind(QWidget):
     def __init__(self):
@@ -49,9 +49,12 @@ class emailwind(QWidget):
             mens = self.boxmens.toPlainText()
             conec.sendmail(correo,dest,f"Subject: {asun}"+
                             f"\n\n {mens}")
-            print("Correo enviado exitosamente")  
+            print("Correo enviado exitosamente")
+            QMessageBox.information(self,"Envio","Correo enviado exitosamente",)  
         except smtplib.SMTPException as e:
             print(f"Error al mandar el correo {e}")
+            QMessageBox.critical(self,"Envio","Error al mandar el correo")  
+ 
         finally:
             conec.quit()
 
