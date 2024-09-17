@@ -1,7 +1,7 @@
 import smtplib
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
-load_dotenv()
+#load_dotenv()
 
 #Reemplazar variables de entorno con tus valores
 servidor = os.getenv('SERVIDOR')
