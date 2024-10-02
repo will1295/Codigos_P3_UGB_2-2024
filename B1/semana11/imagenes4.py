@@ -1,0 +1,25 @@
+from PIL import Image,ImageFilter
+
+img = Image.open("flor.webp")
+imgf1 = img.filter(ImageFilter.CONTOUR)
+imgf2= img.filter(ImageFilter.DETAIL)
+imgf3 = img.filter(ImageFilter.EDGE_ENHANCE)
+#imgf4 = img.filter(ImageFilter.EDGE_ENHANCE.MORE)
+imgf5 = img.filter(ImageFilter.EMBOSS)
+imgf6 = img.filter(ImageFilter.FIND_EDGES)
+imgf7 = img.filter(ImageFilter.SMOOTH)
+#imgf8 = img.filter(ImageFilter.SMOOTH.MORE)
+
+#imgf1.show()
+#imgf2.show()
+#imgf3.show()
+#imgf4.show()
+#imgf5.show()
+#imgf6.show()
+#imgf7.show()
+#imgf8.show()
+
+imgbn = img.convert("L")
+imgb = img.convert("P")
+#imgbn.show()
+imgb.show()
