@@ -20,9 +20,13 @@ red.compile(optimizer="adam",
             loss="sparse_categorical_crossentropy",
             metrics=["accuracy"])
 
-entranm = red.fit(x_train,y_train,epochs=10,
+entranm = red.fit(x_train,y_train,epochs=5,
                     batch_size=32,validation_split=0.32)
 
-test_loss,test_acc = red.evaluate(x_test,y_test,verbose=2)
-print(test_acc)
-print(test_loss)
+#test_loss,test_acc = red.evaluate(x_test,y_test,verbose=2)
+#print(test_acc)
+#print(test_loss)
+
+imagen = x_test[2]
+plt.imshow(imagen,cmap="grey")
+plt.show()
