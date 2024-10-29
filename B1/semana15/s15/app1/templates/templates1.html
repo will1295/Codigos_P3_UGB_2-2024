@@ -1,0 +1,24 @@
+{%extends "generica.html"%}
+{%block titulo%}Ejemplo 1{%endblock%}
+
+{%block contenido%}
+<h1>Bievenido a la tienda en linea</h1>
+<p>Descubre nuestras categorias</p>
+<ul>
+    {%for categoria in categorias%}
+    <li><a href="">{{categoria}}</a></li>
+    {%endfor%}
+</ul>
+
+{%comment%}
+<ul>
+    <li><a href="{%url 'camisas'%}">Camisas</a></li>
+    <li>Vestidos</li>
+    <li>Zapatos</li>
+</ul>
+{%endcomment%}
+{%endblock%}
+
+{%block footer%}Programación Computacional III
+UGB 2024{%endblock%}
+    
