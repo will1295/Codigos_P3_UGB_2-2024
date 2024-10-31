@@ -5,7 +5,7 @@ from app1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home),
+    path('',views.home, name='home'),
     path('camisas/',views.gcamisas,name='camisas'),
     path('view1',views.view1),
     path('clases/',views.view2.as_view()),
