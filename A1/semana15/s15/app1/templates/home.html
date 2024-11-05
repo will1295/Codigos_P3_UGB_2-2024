@@ -1,13 +1,51 @@
 {%extends 'base.html'%}
 {%block title%} Home {%endblock%}
 {%block contenido%}
-<h1>Bievenidos a la tienda</h1>
-<!--Con un enlace con la etiqueta "a"-->
-<button><a href="{%url 'camisas'%}">Ver las camisas</a>
-</button>
 
-<!--Con un boton con la etiqueta "form"-->
-<form action="/camisas/" method="get">
-    <button type="submit">Ver las camisas</button>
-</form>
+<div class="container">
+    <div class="row" style="border: 1px solid black;">
+        <div class="col-md">
+            <h1>Bievenidos a la tienda</h1>        
+        </div>
+    </div>
+    <div class="row" style="border: 1px solid black;">
+        <div class="col-md-6">
+            <!--Con un enlace con la etiqueta "a"-->
+            <button><a href="{%url 'camisas'%}">Ver las camisas</a>
+            </button>
+        </div>
+        <div class="col-md-6">
+            <!--Con un boton con la etiqueta "form"-->
+            <form action="/camisas/" method="get">
+                <button type="submit">Ver las camisas</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-3" style="border: 1px solid black;" >
+                    <p>Columna 1</p>
+            </div>
+            
+            <div class="col-md-3" style="border: 1px solid black;">
+                    <p>Columna 2</p>
+            </div>
+            
+            <div class="col-md-3" style="border: 1px solid black;">
+                    <p>Columna 3</p>
+            </div>                     
+            <div class="col-md-10" style="border: 1px solid black;">
+                <p>Columna 4</p>
+        </div>
+
+        </div>
+
+    </div>
+    
+    
+
+    
+
+</div>
+
+
+
 {%endblock%}

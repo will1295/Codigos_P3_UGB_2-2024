@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block title%} Sucursales {%endblock%}
+{%block contenido%}
+<h1>Visítanos en cualquiera de nuestras sucursales</h1>
+<p>San Miguel</p>
+<ul>
+    <li>Sucursal: {{SM.Sucursal}}</li>
+    <li>Dirección: {{SM.Direccion}}</li>
+    <li>Teléfono: {{SM.telefono}}</li>
+</ul>
+<p>Usulután</p>
+<ul>
+    <li>Sucursal: {{US.Sucursal}}</li>
+    <li>Dirección: {{US.Direccion}}</li>
+    <li>Teléfono: {{US.telefono}}</li>
+</ul>
+
+{%endblock%}

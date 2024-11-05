@@ -3,8 +3,8 @@
 {%block contenido%}
 <p>Explora nuestras categorías</p>
     <ul>
-        <li>Camisetas</li>
-        <li>Vestidos</li>
-        <li>Zapatos</li>
+        {%for categoria in categorias%}
+        <li>{{categoria}}</li>
+        {%endfor%}
     </ul>
 {%endblock%}

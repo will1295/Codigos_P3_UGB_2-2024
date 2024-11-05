@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block title%} Camisas {%endblock%}
+{%block contenido%}
+    <h1>¡Visita nuestras sucursales!</h1>
+    <p>San Miguel</p>
+    <ul>
+        <li>Nombre de la sucursal: {{SM.nom}}</li>
+        <li>Dirección: {{SM.dire}}</li>
+        <li>Teléfono: {{SM.telf}}</li>
+    </ul>
+
+    <!--{%comment%}
+    <p>Usulutan</p>
+    <ul>
+        <li>Nombre de la sucursal: {{US.nom}}</li>
+        <li>Dirección: {{US.dire}}</li>
+        <li>Teléfono: {{US.telf}}</li>
+    </ul>
+    {%endcomment%}-->
+{%endblock%}

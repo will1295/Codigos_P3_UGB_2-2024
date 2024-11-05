@@ -13,5 +13,8 @@ urlpatterns = [
     path('clases/',views.helloclass.as_view()),
     path('',views.form),
     path('formr/',views.formpost),
-    path('usuarios/',views.usuarios.as_view())
+    path('usuarios/',views.usuarios.as_view()),
+    path('tienda/',views.tienda,name='tienda'),
+    path('camisas/',views.tcamisas,name='camisas'),
+    path('sucursales/',views.tsucursales,name='sucursales')
 ]

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros</title>
+</head>
+<body>
+    <h1>Autores de libros</h1>
+    <ul>
+        {%for autor in autores%}
+        <li>Nombre: {{autor.nombre}}</li>
+        <li>Género: {{autor.genero}}</li>
+        <li>Nacionalidad: {{autor.nacion}}</li>
+        <li>Fecha de nacimiento: {{autor.fnac}}</li>
+        {%endfor%}
+    </ul>
+    
+</body>
+</html>

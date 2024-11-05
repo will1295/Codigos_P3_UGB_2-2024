@@ -27,3 +27,20 @@ def formpost(request):
 
 class usuarios(LoginRequiredMixin,View):
     template_name="usuarios.html"
+
+def tienda(request):
+    return render(request,'home.html')
+
+def tcamisas(request):
+    return render(request,'camisas.html')
+
+def tsucursales(request):
+    return render(request,'sucursales.html',{'SM':{
+        'Sucursal':'Centro',
+        'Direccion':'12va avenida sur',
+        'Telefono':123456789
+    },'US':{
+        'Sucursal':'Centro comercial x',
+        'Direccion':'Local 22',
+        'Telefono':123489
+    }})
