@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de libros</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Titulo del libro</th>
+                <th>Autor</th>
+                <th>Genero</th>
+                <th>Fecha de publicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for libro in libros%}
+            <tr>
+                <td>{{libro.titulo}}</td>
+                <td>{{libro.autor}}</td>
+                <td>{{libro.genero}}</td>
+                <td>{{libro.f_pub}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</body>
+</html>

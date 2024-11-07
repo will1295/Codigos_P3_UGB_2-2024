@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block titulo%} Canciones {%endblock%}
+
+{%block contenido%}
+    <h1>Algunas canciones</h1>
+    <ul>
+        {%for cancion in canciones%}
+        <li>Nombre: {{cancion.nombre}}</li>
+        <li>Artista(s)/Grupo: {{cancion.artista}}</li>
+        <li>Fecha de salida: {{cancion.fsalida}}</li>
+        <br><br>
+        {%endfor%}
+    </ul>
+
+{%endblock%}

@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block titulo%} Inicio {%endblock%}
+{%block contenido%}
+
+    <h1>Publicaciones</h1>
+    {%for publicacion in publi%}
+    <div>
+        <p>{{publicacion.descrip}}</p>
+        <h3>Publicado por: {{publicacion.n_user}}</h3>
+        <b>Fecha: {{publicacion.f_pub}}</b>
+    </div>
+    {%endfor%}
+
+{%endblock%}
