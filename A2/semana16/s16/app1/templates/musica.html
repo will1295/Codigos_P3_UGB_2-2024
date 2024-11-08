@@ -3,6 +3,7 @@
 
 {%block contenido%}
     <h1>Algunas canciones</h1>
+    <a href="{%url 'agmusic'%}">Agregar Nuevo</a>
     <ul>
         {%for cancion in canciones%}
         <li>Nombre: {{cancion.nombre}}</li>

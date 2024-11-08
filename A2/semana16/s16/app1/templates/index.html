@@ -3,6 +3,7 @@
 
 {%block contenido%}
     <h1>Grandes artistas de todos los tiempos</h1>
+    <a href="{%url 'agartista'%}">Agregar Nuevo</a>
     <ul>
         {%for artista in artistas%}
         <li>Artista(s)/Grupo: {{artista.artista}}</li>

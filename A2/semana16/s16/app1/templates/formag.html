@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block titulo%} Agregar nuevo músico {%endblock%}
+
+{%block contenido%}
+    <!--<form action="/postform/" method="post">-->
+    <form action="/formreg/" method="post">
+        {%csrf_token%}
+        <input type="text" placeholder="Nombre del artista" name="artista">
+        <input type="text" placeholder="Genero musical" name="genero">
+        <input type="number" min="1800" max="2020" name="year">
+        <button type="submit">Guardar datos</button>
+    </form>
+{%endblock%}

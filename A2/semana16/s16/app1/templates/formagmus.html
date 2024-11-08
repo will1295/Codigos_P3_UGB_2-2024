@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block titulo%} Agregar nueva canción {%endblock%}
+
+{%block contenido%}
+    <!--<form action="/postform/" method="post">-->
+    <form action="/formagmus/" method="post">
+        {%csrf_token%}
+        <input type="text" placeholder="Nombre de la canción" name="cancion">
+        <select name="artista" id="">
+            {%for artista in artistas%}
+            <option value="{{artista.id}}">{{artista.artista}}</option>
+            {%endfor%}
+        </select>
+        <input type="date" placeholder="Año de lanzamiento" name="year">
+        <button type="submit">Guardar datos</button>
+    </form>
+{%endblock%}
