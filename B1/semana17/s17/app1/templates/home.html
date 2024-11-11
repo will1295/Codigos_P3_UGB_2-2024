@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block title%} Pagina de inicio {%endblock%}
+{%block contenido%}
+    <h1>Bienvenido admin</h1>
+    <h2>Listado de estudiantes</h2>
+    <ul>
+        {%for est in estudiantes%}
+        <li>{{est.nombre}}</li>
+        {%endfor%}
+    </ul>
+    <h2>Opciones: </h2>
+    <button type="button"><a href="{%url 'agregar'%}">Agregar nuevo estudiante</a></button>
+{%endblock%}

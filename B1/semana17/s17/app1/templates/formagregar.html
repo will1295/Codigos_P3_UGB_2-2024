@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block title%} Agregar Estudiante {%endblock%}
+{%block contenido%}
+    <h1>Nuevo Estudiante</h1>
+    <form action="/formpost/" method="post">
+        {%csrf_token%}
+        <label for="nom">Nombre completo</label>
+        <input type="text" name="nom" id="nom">
+        <br>
+        <label for="Código">Código</label>
+        <input type="text" name="cod" id="cod">
+        <br>
+        <label for="edad">Edad</label>
+        <input type="number" min="17" step="1.0" name="edad" id="edad">
+        <br>
+        <label for="carr">Carrera</label>
+        <textarea name="carr" id="carr"></textarea>
+        <br>
+        <label for="fecha">Fecha de ingreso</label>
+        <input type="date" name="fecha" id="fecha">
+        <br>
+        <button type="submit">Agregar</button>
+    </form>
+    <button type="button"><a href="{%url 'index'%}">Regresar</a></button>
+{%endblock%}
