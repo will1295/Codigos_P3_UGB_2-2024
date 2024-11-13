@@ -1,25 +1,43 @@
-{%extends 'base.html'%}
-{%block title%} Agregar Estudiante {%endblock%}
-{%block contenido%}
-    <h1>Nuevo Estudiante</h1>
-    <form action="/formpost/" method="post">
-        {%csrf_token%}
-        <label for="nom">Nombre completo</label>
-        <input type="text" name="nom" id="nom">
-        <br>
-        <label for="Código">Código</label>
-        <input type="text" name="cod" id="cod">
-        <br>
-        <label for="edad">Edad</label>
-        <input type="number" min="17" step="1.0" name="edad" id="edad">
-        <br>
-        <label for="carr">Carrera</label>
-        <textarea name="carr" id="carr"></textarea>
-        <br>
-        <label for="fecha">Fecha de ingreso</label>
-        <input type="date" name="fecha" id="fecha">
-        <br>
-        <button type="submit">Agregar</button>
-    </form>
-    <button type="button"><a href="{%url 'index'%}">Regresar</a></button>
-{%endblock%}
+{% extends 'base.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block contenido %}
+  <h1>{{title}}</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        {{ form.nombre }}
+    </div>
+    
+    <div class="mb-3">
+        <label for="codigo" class="form-label">Código</label>
+        {{ form.codigo }}
+    </div>
+    
+    <div class="mb-3">
+        <label for="edad" class="form-label">Edad</label>
+        {{ form.edad }}
+    </div>
+    
+    <div class="mb-3">
+        <label for="carrera" class="form-label">Carrera</label>
+        {{ form.carrera }}
+    </div>
+    
+    <div class="mb-3">
+        <label for="fingr" class="form-label">Fecha de ingreso</label>
+        {{ form.fingr }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    
+  </form>
+  
+   <button type="button" class="btn btn-warning">
+    <a href="{% url 'index' %}">Regresar</a>
+  </button>
+{% endblock %}

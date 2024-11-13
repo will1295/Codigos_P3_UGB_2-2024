@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block titulo%} Formulario {%endblock%}
+{%block contenido%}
+        <!--Donde   Como -->
+    <form action="/add/" method="post">
+        {%csrf_token%}
+        <!--<input type="text" name="nom" id="" placeholder="Nombre completo">
+        <input type="text" name="car" id="" placeholder="Carnet">
+        <input type="number" name="ed" id="" placeholder="Edad">
+        <input type="text" name="cur" id="" placeholder="Curso">
+        -->
+        {{form}}
+        <button type="submit">Click</button>
+    </form>
+{%endblock%}
