@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block titulo %} Formulario {% endblock %}
+{% block contenido %}
+    <form action="/add/" method="post">
+        {% csrf_token %}
+        <label for="id_nombre">Nombre de la materia</label>
+        {{ form.nombre }}
+        <label for="id_estds">Selecciona los estudiantes:</label>
+        {{ form.estds }}  
+        <button type="submit">Click</button>
+    </form>
+{% endblock %}

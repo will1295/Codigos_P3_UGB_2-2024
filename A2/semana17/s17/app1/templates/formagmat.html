@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+{%block titulo%} Inicio {%endblock%}
+
+{%block contenido%}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1>Ingresar nueva materia</h1>
+    </div>
+</div>
+<div class="col-md-6 offset-md-4">
+    <form action="/agregar/" method="post">
+        {%csrf_token%}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Código</label>
+          <!--{{formulario.cod}}-->
+          <input type="text" value="{{mater.codigo}}">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Nombre</label>
+          {{formulario.nom}}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="/">
+            <button type="button" class="btn btn-info">Regresar</button>
+        </a>
+      </form>
+    
+</div>
+              
+        
+        
+       <!-- 
+        <label for="">Código</label>
+        <input type="text" name="cod" id="" placeholder="Código de la materia">
+        <label for="">Nombre</label>
+        <input type="text" name="nom" id="" placeholder="Nombre de la materia">
+    -->
+     {%endblock%}

@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block titulo%} Nuevo Carro {%endblock%}
+{%block contenido%}
+    <div class="row">
+        <div class="col-md-6 offset-md-4">
+            <h1>Nuevo Carro</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form action="/guardar_carro/" method="post">
+                {%csrf_token%}
+                <div class="mb-3">
+                    {{form.modelo.as_field_group}}
+                </div>
+                <div class="mb-3">
+                    <label for="fabric" class="form-label">Fabricante</label>
+                    <select name="fabric" id="fabric" class="form-control">
+                        {% for fabricante in fabricantes %}
+                            <option value="{{ fabricante.id }}">{{ fabricante.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    {{form.placa.as_field_group}}
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="/">
+                    <button type="button" class="btn btn-warning">Regresar</button>
+                </a>
+            </form>
+        </div>
+    </div>
+{%endblock%}

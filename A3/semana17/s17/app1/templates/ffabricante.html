@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+{%block titulo%} Nuevo Fabricante {%endblock%}
+{%block contenido%}
+    <div class="row">
+        <div class="col-md-6 offset-md-4">
+            <h1>Nuevo Fabricante</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form action="/guardar_fab/" method="post">
+                {%csrf_token%}
+                <div class="mb-3">
+                    {{form.identif.as_field_group}}
+                </div>
+                <div class="mb-3">
+                    {{form.nombre.as_field_group}}
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="/">
+                    <button type="button" class="btn btn-warning">Regresar</button>
+                </a>
+              </form>
+
+        </div>
+
+    </div>
+   
+   
+    <!--<form action="/guardar_fab/" method="post">
+        {%csrf_token%}
+      
+        <label for="">Identificador</label>
+        <input type="text" name="ide" id="" placeholder="Identificador">
+        <br>
+        <label for="">Nombre</label>
+        <input type="text" name="nom" id="" placeholder="Nombre">
+        <br>
+        
+    {%comment%}{{form}}{%endcomment%}
+
+    <label for="">Identificador</label>
+    {{form.ide.as_field_group}}
+    <br>
+    <label for="">Nombre</label>
+    {{form.nom.as_field_group}}
+    <br>
+        <button type="submit">Guardar</button>
+        <a href="/">
+            <button type="button">Regresar</button>
+        </a>
+    </form>
+-->
+{%endblock%} 

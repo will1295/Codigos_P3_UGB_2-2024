@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block titulo%} Inicio {%endblock%}
+{%block contenido%}
+
+<a href="/formag/"><button type="button" class="btn btn-success">
+    Agregar Nueva Materia
+</button></a>
+<table class="table table-info">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Código</th>
+            <th>Materia</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for materia in materias%}
+        <tr>
+            <td>{{materia.id}}</td>
+            <!--<td>{{forloop.counter}}</td>-->
+            <td>{{materia.codigo}}</td>
+            <td>{{materia.nombre}}</td>
+            <td>
+                <a href="/editmat/{{materia.id}}"><button type="button" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                <a href="/delmat/{{materia.id}}">
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                </a>
+            </td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+{%endblock%}

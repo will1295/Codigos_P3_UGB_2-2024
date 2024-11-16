@@ -1,0 +1,91 @@
+{%extends 'base.html'%}
+{%block titulo%} Inicio {%endblock%}
+{%block contenido%} 
+    <h1>Listado de fabricantes</h1>
+    <a href="/agregar_fab/">
+        <button type="button" class="btn btn-info">Agregar nuevo</button>
+    </a>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Identificador</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%if fabri%}
+                {%for f in fabri%}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{f.identif}}</td>
+                    <td>{{f.nombre}}</td>
+                    <td>
+                        <a href="/edit_fab/{{f.id}}"><button type="button" class="btn btn-success">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button></a>
+                        <a href="/borrar/{{f.id}}"><button type="button" class="btn btn-danger">
+                            <i class="fa-solid fa-trash"></i>
+                        </button></a>
+                    </td>
+                </tr>
+                {%endfor%}
+                {%else%}
+                    <p>No hay datos aún</p>
+            {%endif%}
+            
+        </tbody>
+      </table>
+
+      <h1>Listado de carros</h1>
+      <a href="/agregar_carro/">
+          <button type="button" class="btn btn-info">Agregar nuevo</button>
+      </a>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Modelo</th>
+              <th scope="col">Fabricante</th>
+              <th scope="col">Placa</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+              {%if carros%}
+                  {%for c in carros%}
+                  <tr>
+                      <td>{{forloop.counter}}</td>
+                      <td>{{c.modelo}}</td>
+                      <td>{{c.fabric.nombre}}</td>
+                      <td>{{c.placa}}</td>
+                      <td>
+                          <a href="/edit_carro/{{c.id}}"><button type="button" class="btn btn-success">
+                              <i class="fa-solid fa-pen-to-square"></i>
+                          </button></a>
+                          <a href="/borrar_carro/{{c.id}}"><button type="button" class="btn btn-danger">
+                              <i class="fa-solid fa-trash"></i>
+                          </button></a>
+                      </td>
+                  </tr>
+                  {%endfor%}
+                  {%else%}
+                      <p>No hay datos aún</p>
+              {%endif%}
+          </tbody>
+      </table>  
+    <!--
+    <ul>
+        {%if fabri%}
+            {%for f in fabri%}
+            <li>{{f.identif}}</li>
+            <li>{{f.nombre}}</li>
+            <br>
+            {%endfor%}
+        {%else%}
+            <p>No hay datos aún</p>
+        {%endif%}
+    </ul>
+     
+{%endblock%}

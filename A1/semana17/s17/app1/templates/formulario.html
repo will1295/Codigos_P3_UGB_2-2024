@@ -1,15 +1,20 @@
-{%extends 'base.html'%}
-{%block titulo%} Formulario {%endblock%}
-{%block contenido%}
-        <!--Donde   Como -->
+{% extends 'base.html' %}
+{% block titulo %} Formulario {% endblock %}
+{% block contenido %}
     <form action="/add/" method="post">
-        {%csrf_token%}
-        <!--<input type="text" name="nom" id="" placeholder="Nombre completo">
-        <input type="text" name="car" id="" placeholder="Carnet">
-        <input type="number" name="ed" id="" placeholder="Edad">
-        <input type="text" name="cur" id="" placeholder="Curso">
-        -->
-        {{form}}
+        {% csrf_token %}
+        <label for="id_nombre">Nombre</label>
+        {{ form.nom }}
+        
+        <label for="id_carnet">Carnet</label>
+        {{ form.car }}
+        
+        <label for="id_edad">Edad</label>
+        {{ form.ed }}
+        
+        <label for="id_curso">Curso</label>
+        {{ form.cur }}
+        
         <button type="submit">Click</button>
     </form>
-{%endblock%}
+{% endblock %}
