@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+{%block contenido%}
+    <h2>Carrito de compras</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            {%for id,p in carrito.items%}
+                <td>{{p.nombre}}</td>
+                <td>{{p.precio}}</td>
+                <td>{{p.cantidad}}</td>
+                <td>
+                    <a href="/delcar/{{id}}">
+                        <button type="button">Eliminar del carrito</button>
+                    </a>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <a href="/">
+        <button type="button">Regresar</button>
+    </a>
+{%endblock%}

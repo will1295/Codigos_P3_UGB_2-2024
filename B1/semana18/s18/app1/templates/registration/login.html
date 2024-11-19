@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+<!--Se debe instalar widget tweaks para que 
+se puedan agregar classes, es la forma más
+fácil  y directa
+Se instala con pip install widget_tweaks
+Y se debe cargar en cada template que lo necesite
+NO AJUSTA PONERLO EN BASE HTML DEBE PONERSE DIRECTAMENTE EN LA TEMPLATE
+Tambien incluirlo en setting.py, favor revisar
+INSTALLED APPS-->
+{% load widget_tweaks %}
+{%block contenido%}
+
+{%if form.errors%}
+    <p>Nombre y/o contraseña erróneos, intente 
+        de nuevo
+    </p>
+{%endif%}
+
+{%if next%}
+    {%if user.is_authenticated%}
+        <p>No se tiene acceso a esta sección.
+            Ingrese sesión con un usuario con
+            los permisos necesarios.
+        </p>
+    {%else%}
+        <p>
+            Inicie sesión para continuar
+        </p>
+    {%endif%}
+{%endif%}
+    
+
+
+<form action="{%url 'login'%}" method="post">
+    {%csrf_token%}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
+      {{form.username|add_class:'form-control'|attr:'placeholder:Escribe tu usuario'}}
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      {{form.password|add_class:'form-control'|attr:'placeholder:Escribe tu contraseña'}}
+    </div>
+    <button type="submit" class="btn btn-primary">Inciar Sesión</button>
+  </form>
+
+<p><a href="{%url 'password_reset'%}">¿Haz olvidado tu contraseña? 
+    Haz Click Aquí</a></p>
+
+{%endblock%}

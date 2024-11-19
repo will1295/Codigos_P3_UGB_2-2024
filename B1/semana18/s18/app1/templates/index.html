@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{%block contenido%}
+    <h2>Productos disponibles</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            {%for p in productos%}
+                <td>{{p.nombre}}</td>
+                <td>{{p.precio}}</td>
+                <td>
+                    <a href="/addcar/{{p.id}}">
+                        <button type="button">Agregar al carrito</button>
+                    </a>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <a href="/vercar/">
+        <button type="button">Ver carrito</button>
+    </a>
+{%endblock%}
