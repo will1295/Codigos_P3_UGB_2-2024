@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block contenido%}
+    <h1>Carrito de compras</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for key,item in carrito.items%}
+            <tr>
+                <th>{{item.nombre}}</th>
+                <th>{{item.precio}}</th>
+                <th>{{item.cantidad}}</th>
+                <th>{{item.total|floatformat:2}}</th>
+                <th>
+                    <a href="/del_carr/{{key}}">
+                        <button type="button">Borrar del carrito</button>
+                    </a>
+                </th>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <a href="/">Regresar</a>
+{%endblock%}

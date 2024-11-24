@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block contenido%}
+    <h1>Listado de productos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for p in productos%}
+            <tr>
+                <th>{{p.nombre}}</th>
+                <th>{{p.precio}}</th>
+                <th>
+                    <form action="/carrito/{{p.id}}" method="get">
+                        <input type="number" name="" id="" min="1" max="{{p.stock}}" value="1">
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
+                </th>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <a href="{%url 'ver_carrito'%}">Ver carrito</a>
+{%endblock%}

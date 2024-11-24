@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%load widget_tweaks%}
+{%block contenido%}
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1>Formulario de inicio de sesión</h1>
+            {%if form.errors%}
+                <p>Nombre de usuario y/o correo erróneos. Porfavor, intente de nuevo</p>
+            {%endif%}
+            {% if next%}
+                {%if user.is_authenticated%}
+                    <p>No tiene permiso para ver esta página. Inicie sesión con 
+                        un usuario con los permisos necesario
+                    </p>
+                {%endif%}
+            {%endif%}
+        <form action="{%url 'login'%}" method="post">
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <td><label for="" class="form-label">Usuario</label></td>
+                    <td>{{form.username|add_class:'form-control'|attr:'placeholder:Escribe tu usuario'}}</td>
+                </tr>
+                <tr>
+                    <td><label for="" class="form-label">Contraseña</label></td>
+                    <td>{{form.password|add_class:'form-control'|attr:'placeholder:Escribe tu contraseña'}}</td>
+                </tr>
+            </table>
+            <button type="submit" class="btn btn-success">Iniciar Sesión</button>
+            <a href="{%url 'password_reset'%}">¿Haz olvidado tu contraseña? Haz Click aquí</a>
+    
+        </form>
+        </div>
+            
+    </div>
+    
+{%endblock%}
