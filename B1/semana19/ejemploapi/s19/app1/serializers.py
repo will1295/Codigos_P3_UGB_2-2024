@@ -12,7 +12,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ['url','name']
 
-class EstudianteSerializer(serializers.Serializer):
+class EstudianteSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
     nombre = serializers.CharField(max_length=100)
     edad = serializers.IntegerField()
